@@ -21,3 +21,17 @@ en esta rama creamos un contador separando todos los elementos y creando un comp
 * Estructura de proyecto
 * Permitir imágenes externas
 
+### SSR 
+
+se cubriran las siguiente actividades
+
+* Manejo de Metadata dinámica
+* Páginas generadas del lado del servidor - SGR
+* Páginas de errores
+* Validación de argumentos
+* Redirecciones
+* Prioridad de Carga de imágenes
+* Tipos de revalidación con Fetch y sin Fetch
+* Estructuras HTML con Tailwind
+
+
