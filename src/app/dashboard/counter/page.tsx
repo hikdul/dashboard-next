@@ -15,6 +15,5 @@ export default function CounterPage()
             <span>COUNTER Items</span>
             <CardCounter value={7}/>
         </div>
-    
     )
 } 

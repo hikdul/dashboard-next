@@ -28,7 +28,7 @@ export const PokemonCard = ({pokemon}:prop) => {
                     </div>
                 </div>
                 <div className="border-b">
-                    <Link href={`/pokemon/${pokemon.id}`} className="px-4 py-2 hover:bg-gray-100 flex" >
+                    <Link href={`/dashboard/pokemon/${pokemon.id}`} className="px-4 py-2 hover:bg-gray-100 flex" >
                             <div className="text-green-600">
                                 <svg
                                     fill="none"
@@ -51,8 +51,8 @@ export const PokemonCard = ({pokemon}:prop) => {
                                 <p className="text-xs text-gray-500">Detalles generales del pokemon</p>
                             </div>
                     </Link>
-
-                    <Link className="px-4 py-2 hover:bg-gray-100 flex" href={`/pokemon/${pokemon.id}`} >
+{/*
+                    <Link className="px-4 py-2 hover:bg-gray-100 flex" href={`/dashboard/pokemon/${pokemon.id}`} >
                             <div className="text-gray-800">
                                 <svg
                                     fill="none"
@@ -71,15 +71,15 @@ export const PokemonCard = ({pokemon}:prop) => {
                                 <p className="text-xs text-gray-500">Datos de Region y localizacion</p>
                             </div>
                     </Link>
-                    
-                    <Link className="px-4 py-2 hover:bg-gray-100 flex items-center"  href={`/pokemon/favorite/${pokemon.id}`} >
+    */}         
+                    <Link className="px-4 py-2 hover:bg-gray-100 flex items-center"  href={`/dashboard/pokemon/favorite/${pokemon.id}`} >
                         <div className="text-red-600">
                             <FaHeart />
                         </div>
                         <div className="pl-3">
                             <p className="text-sm font-medium text-gray-800 leading-none">favorite</p>
                         </div>
-                    </Link>
+    </Link>
                 </div>
             </div>
         </div>

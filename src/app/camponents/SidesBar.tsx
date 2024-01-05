@@ -31,7 +31,7 @@ const menuItems = [
 const SideBar = () => (
 
     <div id="menu"
-        style={{width:'400px'}}
+        style={{width:'300px'}}
         className="bg-gray-900 min-h-screen z-10 text-slate-300 w-64 left-0  overflow-y-scroll">
 
         <div id="logo" className="my-4 px-6">
@@ -59,8 +59,7 @@ const SideBar = () => (
             </a>
         </div>
         <div id="nav" className="w-full px-6">
-
-                    {menuItems.map( y => <SideBarMenuItem  {...y} />)}
+            {menuItems.map( y => <SideBarMenuItem key={y.path}  {...y} />)}
         </div>
     </div>
 )

@@ -19,10 +19,3 @@ interface props{
 }
 
 
-
-// <Image
-//     src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pk.id}.png`}
-//     width={100}
-//     height={100}
-//     alt={`${pk.name}`}
-// />
