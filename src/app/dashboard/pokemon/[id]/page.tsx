@@ -3,11 +3,19 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
+// * para generar datos staticos mediante datos de info.
+// NOTE: esto solo le ejecuta de tiempo de construccion (build time)
+export async function generateStaticParams() {
+    // -- 898 pokemon existen para el dia que escribi este codigo
+    const staticPAgesIds = Array.from({length: 898}).map((v,i)=> `${i + 1}`)      
+    return staticPAgesIds.map( id => ({id}))
+}
 
+// * Para obtener lel listado de pokemos por medio de una peticion
 const getPokemon = async (id: string): Promise<PokemonDetailsTs> => {
     try{
     const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`, {
-        cache: 'force-cache', // TODO: verificar este detalle para jugar con el cache  
+       // OJO: cache: 'force-cache', // TODO: verificar este detalle para jugar con el cache  
         next: {
             revalidate: 60 * 60 * 30 * 6
             // * aca estoy validando cada 6 meses para que autogenere las paginas en caso de que ya las aya echo, 
@@ -28,7 +36,7 @@ const getPokemon = async (id: string): Promise<PokemonDetailsTs> => {
     }
 }
 
-
+// * para generar la metadata del software de manera asyncrona
 export async function generateMetadata({ params }: props): Promise<Metadata> {
     try {
         const { id, name } = await getPokemon(params.id)

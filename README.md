@@ -34,4 +34,8 @@ se cubriran las siguiente actividades
 * Tipos de revalidación con Fetch y sin Fetch
 * Estructuras HTML con Tailwind
 
+### staticGeneration
+
+basicamente en este punto se genera el codigo necesario para que cuando se genere codigo que sea dinamico en una web, se pueda hacer que esta informacion se genere de marena statica y de antemano en el servidor; esto con el unico fin de hacer que la respuestas obtenidas por los usuarios se tengan de antemano y por tanto se pueda hacer en el menor tiempo posible.
+
 
