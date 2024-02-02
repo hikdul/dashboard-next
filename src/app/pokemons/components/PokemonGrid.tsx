@@ -7,7 +7,7 @@ export function PokemonGrid({pokemons}:props) {
     return (
         <>
             {
-                pokemons.map(pk => ( <PokemonCard pokemon={pk} key={pk.id} />))
+                pokemons.map(pk => ( <PokemonCard pokemon={pk} key={pk.name} />))
             }
         </>
     )

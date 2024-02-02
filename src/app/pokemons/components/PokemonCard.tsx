@@ -28,7 +28,7 @@ export const PokemonCard = ({pokemon}:prop) => {
                     </div>
                 </div>
                 <div className="border-b">
-                    <Link href={`/dashboard/pokemon/${pokemon.id}`} className="px-4 py-2 hover:bg-gray-100 flex" >
+                  <Link href={`/dashboard/pokemon/${pokemon.id}`} className="px-4 py-2 hover:bg-gray-100 flex" >
                             <div className="text-green-600">
                                 <svg
                                     fill="none"
@@ -46,7 +46,30 @@ export const PokemonCard = ({pokemon}:prop) => {
                             
                             <div className="pl-3">
                                 <p className="text-sm font-medium text-gray-800 leading-none">
-                                    Detalles
+                                    Detalles por id
+                                </p>
+                                <p className="text-xs text-gray-500">Detalles generales del pokemon</p>
+                            </div>
+                    </Link>
+                    <Link href={`/dashboard/pokemons/${pokemon.name}`} className="px-4 py-2 hover:bg-gray-100 flex" >
+                            <div className="text-green-600">
+                                <svg
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="1"
+                                    viewBox="0 0 24 24"
+                                    className="w-5 h-5"
+                                >
+                                    <path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                </svg>
+                            </div>
+                            
+                            
+                            <div className="pl-3">
+                                <p className="text-sm font-medium text-gray-800 leading-none">
+                                    Detalles por nombre
                                 </p>
                                 <p className="text-xs text-gray-500">Detalles generales del pokemon</p>
                             </div>
