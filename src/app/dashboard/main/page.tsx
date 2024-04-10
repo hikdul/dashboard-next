@@ -1,5 +1,16 @@
+import { SimpleWidget } from "@/app/camponents";
 
 export default function MainPage()
 {
-    return(<h3>main page</h3>)
+    return(
+    <>
+        <div className="text-black">
+            <h1 className="mt-2 text-3xl">Dashboard</h1>
+            <span className="text-xl">Informacion General</span>
+            <div className="flex flex-wrap p-2">
+                <SimpleWidget />
+                
+            </div>
+        </div>
+    </>)
 }

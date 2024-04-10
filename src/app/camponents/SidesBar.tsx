@@ -3,6 +3,7 @@ import { FaGauge } from "react-icons/fa6";
 import { FaPuzzlePiece } from 'react-icons/fa6'
 import { FaArrowUp19 } from 'react-icons/fa6'
 import { FaNimblr } from 'react-icons/fa6'
+import { FaFaceGrinSquint } from "react-icons/fa6";
 import { SideBarMenuItem } from "./SideBarMenuItem";
 
 
@@ -24,6 +25,12 @@ const menuItems = [
         icon: <FaNimblr />,
         title: 'Pokemon',
         subtitle: 'Generacion Estatica'       
+    },
+    {
+        path: '/dashboard/favorite',
+        icon: <FaFaceGrinSquint />,
+        title: 'Favoritos',
+        subtitle: 'Global State'       
     }
 ]
 
