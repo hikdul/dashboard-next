@@ -1,15 +1,19 @@
 "use client"
 
 import { useAppDispatch, useAppSelector } from "@/store"
-import { addOne, subsOne } from "@/store/counter/counterSlice"
+import { addOne,initCounterState, subsOne } from "@/store/counter/counterSlice"
+import { useEffect } from "react"
 //import { useState } from "react"
 
 
 export const CardCounter = ({value=10}:props) => {
 
-    //const [counter, setCounter] = useState(value)
     const counter = useAppSelector(state => state.counter.count)
     const dispatch = useAppDispatch()
+    
+    useEffect(()=>{
+        dispatch(initCounterState(value))
+    },[dispatch,value])
 
     return (
         <>
