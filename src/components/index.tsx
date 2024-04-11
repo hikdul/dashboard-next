@@ -1,7 +1,9 @@
-import SideBar from "./SidesBar";
-import { SimpleWidget } from "./SimpleWidget";
+import SideBar from './sidebar/SidesBar'
+import { SimpleWidget } from './dashboard/SimpleWidget'
+import {WidgetGrid} from './dashboard/WidgetGrid'
 
 export{
    SideBar ,
-   SimpleWidget
+   SimpleWidget,
+   WidgetGrid
 } 

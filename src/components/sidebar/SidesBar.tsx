@@ -36,7 +36,7 @@ const menuItems = [
 
 
 const SideBar = () => (
-
+    <>
     <div id="menu"
         style={{width:'300px'}}
         className="bg-gray-900 min-h-screen z-10 text-slate-300 w-64 left-0  overflow-y-scroll">
@@ -69,6 +69,7 @@ const SideBar = () => (
             {menuItems.map( y => <SideBarMenuItem key={y.path}  {...y} />)}
         </div>
     </div>
+    </>
 )
 
 
