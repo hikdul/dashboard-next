@@ -1,4 +1,4 @@
-import { SimpleWidget } from "@/app/camponents";
+import { SimpleWidget } from "@/components";
 
 export default function MainPage()
 {

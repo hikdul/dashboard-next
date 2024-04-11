@@ -1,5 +1,5 @@
 
-import { CardCounter } from '@/app/camponents/shoppingCar';
+import { CardCounter } from '@/app/shoppingCar';
 import { Metadata } from 'next';
 
  export const metadata:Metadata = {
