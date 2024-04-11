@@ -17,7 +17,7 @@ export const WidgetGrid = () => {
             title={`${counterState.count}`}   
             subtitle='Current value' 
             icon={<IoCardOutline size={50}  className='text-blue-600'/>} 
-            href='' />
+            href='/dashboard/counter' />
         )}
     </div>
   )
