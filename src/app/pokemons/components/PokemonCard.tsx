@@ -1,9 +1,17 @@
+'use client'
 import Link from "next/link"
 import { SimplePokemon } from ".."
 import Image from "next/image"
 import { FaHeart } from "react-icons/fa6"
+import { IoHeart, IoHeartOutline } from "react-icons/io5"
+import { useAppSelector } from "@/store"
 
 export const PokemonCard = ({pokemon}:prop) => {
+    const id = `${pokemon.id}`
+    // ? esto es para que verifique si este esta en la lista de favoritos
+    const isFavorite = useAppSelector(state => !!state.pokemons[id] )
+    //console.log({isFavorite})
+    
     return (
         <div className="mx-auto right-0 mt-2 w-60">
             <div className="bg-white rounded overflow-hidden shadow-lg">
@@ -74,33 +82,14 @@ export const PokemonCard = ({pokemon}:prop) => {
                                 <p className="text-xs text-gray-500">Detalles generales del pokemon</p>
                             </div>
                     </Link>
-{/*
-                    <Link className="px-4 py-2 hover:bg-gray-100 flex" href={`/dashboard/pokemon/${pokemon.id}`} >
-                            <div className="text-gray-800">
-                                <svg
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="1"
-                                    viewBox="0 0 24 24"
-                                    className="w-5 h-5"
-                                >
-                                    <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                                </svg>
-                            </div>
-                            <div className="pl-3">
-                                <p className="text-sm font-medium text-gray-800 leading-none">Fauna</p>
-                                <p className="text-xs text-gray-500">Datos de Region y localizacion</p>
-                            </div>
-                    </Link>
-    */}         
+         
                     <Link className="px-4 py-2 hover:bg-gray-100 flex items-center"  href={`/dashboard/pokemon/favorite/${pokemon.id}`} >
                         <div className="text-red-600">
-                            <FaHeart />
+                            {isFavorite ? <IoHeart /> : <IoHeartOutline/>}
+                            
                         </div>
                         <div className="pl-3">
-                            <p className="text-sm font-medium text-gray-800 leading-none">favorite</p>
+                            <p className="text-sm font-medium text-gray-800 leading-none">{isFavorite ? 'SI' : 'NO'}</p>
                         </div>
     </Link>
                 </div>
