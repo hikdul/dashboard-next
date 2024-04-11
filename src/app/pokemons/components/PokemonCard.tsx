@@ -4,13 +4,18 @@ import { SimplePokemon } from ".."
 import Image from "next/image"
 import { FaHeart } from "react-icons/fa6"
 import { IoHeart, IoHeartOutline } from "react-icons/io5"
-import { useAppSelector } from "@/store"
+import { useAppDispatch, useAppSelector } from "@/store"
+import { toggleFavorite } from "@/store/pokemon/favoritesSlices"
 
 export const PokemonCard = ({pokemon}:prop) => {
     const id = `${pokemon.id}`
     // ? esto es para que verifique si este esta en la lista de favoritos
     const isFavorite = useAppSelector(state => !!state.pokemons[id] )
+    const dispatch = useAppDispatch()
     //console.log({isFavorite})
+    const onToggleFavorite = () =>{
+        dispatch(toggleFavorite(pokemon))
+    }
     
     return (
         <div className="mx-auto right-0 mt-2 w-60">
@@ -83,7 +88,9 @@ export const PokemonCard = ({pokemon}:prop) => {
                             </div>
                     </Link>
          
-                    <Link className="px-4 py-2 hover:bg-gray-100 flex items-center"  href={`/dashboard/pokemon/favorite/${pokemon.id}`} >
+                    <div
+                        onClick={onToggleFavorite}
+                        className="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer" >
                         <div className="text-red-600">
                             {isFavorite ? <IoHeart /> : <IoHeartOutline/>}
                             
@@ -91,7 +98,7 @@ export const PokemonCard = ({pokemon}:prop) => {
                         <div className="pl-3">
                             <p className="text-sm font-medium text-gray-800 leading-none">{isFavorite ? 'SI' : 'NO'}</p>
                         </div>
-    </Link>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { SimplePokemon } from '@/app/pokemons';
-import { createSlice } from '@reduxjs/toolkit'
 
 interface favoritesProps
 {
@@ -13,9 +13,23 @@ const initialState = {
 const favorites = createSlice({
   name: 'pokemons',
   initialState,
-  reducers: {}
+  reducers: {
+    toggleFavorite(state, action: PayloadAction<SimplePokemon>){
+      const pk = action.payload
+      const {id} = pk
+      
+      if(!!state[id])
+      {
+        delete state[id] 
+        return
+      }
+      
+      state[id] = pk
+      
+    }
+  }
 });
 
-export const {} = favorites.actions
+export const {toggleFavorite} = favorites.actions
 
 export default favorites.reducer
