@@ -39,3 +39,10 @@ se cubriran las siguiente actividades
 basicamente en este punto se genera el codigo necesario para que cuando se genere codigo que sea dinamico en una web, se pueda hacer que esta informacion se genere de marena statica y de antemano en el servidor; esto con el unico fin de hacer que la respuestas obtenidas por los usuarios se tengan de antemano y por tanto se pueda hacer en el menor tiempo posible.
 
 
+### GlobalStateFavoritos
+Esta sección tiene por objetivo principal dos cosas:
+
+* Manejo de Favoritos
+* Trabajar LocalStorage con Server components
+
+Esto llevará indiscutiblemente a inconvenientes, pero de antemano les digo, cuando trabajemos las aplicaciones reales con bases de datos y Cookies, no es necesario tanta complejidad que se debe de colocar para trabajar y construir aplicaciones que usen el local storage en Next y ese localstorage modifique lo que se genera en pantalla.
