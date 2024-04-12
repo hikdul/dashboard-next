@@ -10,7 +10,7 @@ import { toggleFavorite } from "@/store/pokemon/favoritesSlices"
 export const PokemonCard = ({pokemon}:prop) => {
     const id = `${pokemon.id}`
     // ? esto es para que verifique si este esta en la lista de favoritos
-    const isFavorite = useAppSelector(state => !!state.pokemons[id] )
+    const isFavorite = useAppSelector(state => !!state.pokemons.favorites[id] )
     const dispatch = useAppDispatch()
     //console.log({isFavorite})
     const onToggleFavorite = () =>{
