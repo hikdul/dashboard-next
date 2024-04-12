@@ -6,10 +6,9 @@ interface favoritesStateProps
     [Key:string]: SimplePokemon
 }
 
-const keyFavorites = 'favorite-pokemons'
 // * esto no se considera un antipatron, ya que el llamado al localStorage no es un metodo asincrono y aca no importa que se llamen datos de un elemento externo
 const getInitState = ():favoritesStateProps =>{
-  const fav = JSON.parse(localStorage.getItem(keyFavorites)??'{}')
+  const fav = JSON.parse(localStorage.getItem('favorite-pokemons')??'{}')
   return fav
 }
 
@@ -57,7 +56,7 @@ const favorites = createSlice({
       }
      //? aca lo guardamos en el local storage 
      //! se considera un antipatron, ya que literal estamos haciendo algo con el state fuera del stado de redux
-     localStorage.setItem(keyFavorites, JSON.stringify(state)) //Note: no se debe de hace esto en redux
+     //localStorage.setItem(keyFavorites, JSON.stringify(state)) //Note: no se debe de hace esto en redux || por eso se uso un middleware
       
     }
   }
