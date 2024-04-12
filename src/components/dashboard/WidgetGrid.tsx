@@ -2,12 +2,14 @@
 
 import React from 'react'
 import { SimpleWidget } from './SimpleWidget'
-import { IoCardOutline } from "react-icons/io5"
+import { IoCardOutline, IoStarHalf } from "react-icons/io5"
 import { useAppSelector } from '@/store'
 
 export const WidgetGrid = () => {
     
-    const counterState = useAppSelector(state => state.counter)
+    const state = useAppSelector(state => state)
+    const counterState = state.counter
+    const NFavoritos = Object.values(state.pokemons).length
     
   return (
     <div className="flex flex-wrap p-2 items-center justify-center">
@@ -19,6 +21,13 @@ export const WidgetGrid = () => {
             icon={<IoCardOutline size={50}  className='text-blue-600'/>} 
             href='/dashboard/counter' />
         )}
+
+        <SimpleWidget 
+            label='Pokemones'  
+            title={`${NFavoritos}`}   
+            subtitle='favoritos' 
+            icon={<IoStarHalf size={50}  className='text-blue-600'/>} 
+            href='/dashboard/favorite' />
     </div>
   )
 }

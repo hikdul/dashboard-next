@@ -1,7 +1,5 @@
 
-import {FavoritePokemons, PokemonGrid, SimplePokemon } from "@/app/pokemons"
-import { useAppSelector } from "@/store"
-import { IoHeartOutline } from "react-icons/io5"
+import {FavoritePokemons } from "@/app/pokemons"
 
 export const metadata = {
     title: 'Favoritos',
@@ -23,4 +21,6 @@ export default async function FavoritePage(){
         </div>
     )
 }
+
+
 
