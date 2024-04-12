@@ -1,14 +1,12 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { SimplePokemon } from '@/app/pokemons';
 
-interface favoritesProps
+interface favoritesStateProps
 {
     [Key:string]: SimplePokemon
 }
 
-const initialState = {
-    '1':{id:'1', name:'bulbasaur'},
-}
+const initialState:favoritesStateProps = {}
 
 const favorites = createSlice({
   name: 'pokemons',

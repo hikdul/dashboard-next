@@ -6,6 +6,14 @@ simplemente es un pequena prueba sobre como crear un dashboard con next 14.
 
 este proyecto es parte del curso de Fernando Herrera; el codigo original se puede conseguir [aqui](https://github.com/Klerith/next-my-dashboard/tree/fin-seccion-4)
 
+## Notas o elementos a tomar en cuenta 
+
+### diferencio entre localStorage, SesionStorage y cockies
+
+* <b>LocalStorage:</b> es aplica a mantener la informacion por dominio de manera persistente, asi mientras se desee esta informacion se mantiene en el explorador almacenado de manera persistente.
+* <b>SessionStorage:</b> esto mantiene la informacion por dominio mientras el explorador se encuentre abierto, depende casi esclusivamente de que el explorador se encuentre abierto, pero una ves se cierre o reinicie el explorador esta informacion se pierde.
+* <b>Cookies:</b> estas mantiene la informacion de manera persistente con la diferencia de que estas informacion viaja(mayormente) en las peticiones http y por tanto esta informacion no es esclusiva del navegador si no que al contrario siempre puede estar viajando en cada peticion que se genere en la navegacion. 
+
 ## Ramas
 
 ### base
